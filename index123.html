@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghatampur Gaming Zone</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    background: #020617;
+    padding: 15px;
+    text-align: center;
+}
+nav h1 {
+    color: #22c55e;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #020617, #0f172a);
+}
+.hero h2 {
+    font-size: 40px;
+}
+.hero button {
+    padding: 10px 20px;
+    background: #22c55e;
+    border: none;
+    cursor: pointer;
+}
+
+/* PRICING */
+.pricing {
+    padding: 30px;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+}
+.card h3 {
+    color: #22c55e;
+}
+
+/* BOOKING */
+.booking {
+    padding: 30px;
+    text-align: center;
+}
+input, select {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+button {
+    background: #22c55e;
+    padding: 10px;
+    border: none;
+}
+
+/* CONTACT */
+.contact {
+    padding: 30px;
+    text-align: center;
+    background: #020617;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>🎮 Ghatampur Gaming Zone</h1>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h2>Ultimate Gaming Experience</h2>
+    <p>Play PS3, PS4 & Coin Machines</p>
+    <button onclick="scrollToBooking()">Book Now</button>
+</div>
+
+<!-- PRICING -->
+<div class="pricing">
+    <h2>💰 Pricing</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>PS3 (4 Units)</h3>
+            <p>₹50 / hour</p>
+        </div>
+        <div class="card">
+            <h3>PS4 (1 Unit)</h3>
+            <p>₹100 / hour</p>
+        </div>
+        <div class="card">
+            <h3>Coin Machine (4)</h3>
+            <p>₹10 / game</p>
+        </div>
+    </div>
+</div>
+
+<!-- BOOKING -->
+<div class="booking" id="booking">
+    <h2>📅 Book Your Slot</h2>
+    
+    <input type="text" id="name" placeholder="Your Name"><br>
+    
+    <select id="game">
+        <option>PS3</option>
+        <option>PS4</option>
+        <option>Coin Machine</option>
+    </select><br>
+    
+    <input type="date" id="date"><br>
+    
+    <input type="time" id="time"><br>
+    
+    <button onclick="bookNow()">Confirm Booking</button>
+    
+    <p id="message"></p>
+</div>
+
+<!-- CONTACT -->
+<div class="contact">
+    <h2>📞 Contact Us</h2>
+    <p>Phone: +91 8090399288</p>
+    <p>Location: Ghatampur, Uttar Pradesh</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Ghatampur Gaming Zone</p>
+</footer>
+
+<script>
+function scrollToBooking() {
+    document.getElementById("booking").scrollIntoView();
+}
+
+function bookNow() {
+    let name = document.getElementById("name").value;
+    let game = document.getElementById("game").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+
+    if(name === "" || date === "" || time === "") {
+        document.getElementById("message").innerText = "Please fill all fields!";
+        return;
+    }
+
+    document.getElementById("message").innerText =
+        "Booking Confirmed for " + name + " (" + game + ") on " + date + " at " + time;
+}
+</script>
+
+</body>
+</html>
